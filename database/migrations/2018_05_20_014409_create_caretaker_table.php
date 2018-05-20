@@ -15,6 +15,12 @@ class CreateCaretakerTable extends Migration
     {
         Schema::create('caretaker', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('occupation');
+            $table->string('desscription');
+            $table->string('facebook')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('instagram')->nullable();
             $table->timestamps();
         });
     }

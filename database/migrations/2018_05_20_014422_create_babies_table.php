@@ -15,6 +15,10 @@ class CreateBabiesTable extends Migration
     {
         Schema::create('babies', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('photos');
+            $table->string('profile')->nullable();
+            $table->string('date_of_birth')->nullable();
             $table->timestamps();
         });
     }

@@ -15,6 +15,8 @@ class CreateSiteSettingsTable extends Migration
     {
         Schema::create('site_settings', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('key');
+            $table->string('value');
             $table->timestamps();
         });
     }
