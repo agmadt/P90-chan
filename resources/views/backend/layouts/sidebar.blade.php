@@ -26,12 +26,12 @@
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">MAIN NAVIGATION</li>
       <li class="">
-        <a href="{{ route('admin.news.create') }}">
+        <a href="{{ route('news.create') }}">
           <i class="fa fa-dashboard"></i> <span>Dashboard</span>
         </a>
       </li>
       <li class="active">
-        <a href="{{ route('admin.news.index') }}">
+        <a href="{{ route('news.index') }}">
           <i class="fa fa-newspaper-o"></i>
           <span>News</span>
         </a>

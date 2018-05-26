@@ -3,9 +3,11 @@
 
 Route::group(['prefix' => 'backend'], function () {
 
-	Route::get('login', ['uses' => 'LoginController@showLoginForm'])->name('login');
-	Route::post('login', ['uses' => 'LoginController@authenticate']);
-	Route::post('logout', ['uses' => 'LoginController@logout'])->name('logout');
+	Route::get('/login', ['uses' => 'LoginController@showLoginForm'])->name('login');
+	Route::post('/login', ['uses' => 'LoginController@login']);
+	Route::get('/logout', ['uses' => 'LoginController@logout'])->name('logout');
+
+	Route::get('/', ['uses' => 'NewsController@index'])->name('backend.dashboard');
 
 	Route::group(['prefix' => '/news', 'as' => 'news.'], function () {
 		Route::get('/', 'NewsController@index')->name('index');

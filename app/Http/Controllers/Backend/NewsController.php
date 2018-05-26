@@ -10,6 +10,11 @@ use File;
 
 class NewsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
     	$retrieveData = News::latest('created_at')->paginate(10);
