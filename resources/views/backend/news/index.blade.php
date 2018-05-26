@@ -30,43 +30,39 @@
 	    <a href="{{ route('news.create') }}" class="btn btn-success"><i class="fa fa-plus-circle"></i> Add News</a>
 	  </div>
 	</div>
-    <div class="col-xs-12">
-      <div class="box">
-        <div class="box-body table-responsive no-padding">
-          <table class="table table-hover">
-            <tr>
-              <th>#</th>
-              <th>Title</th>
-              <th>Image</th>
-              <th>Status</th>
-              <th>Action</th>
-            </tr>
-            @php $no =1; @endphp
-            @foreach ($retrieveData as $data)
-            <tr>
-              <td>{{ $no }}</td>
-              <td>{{ $data->title }}</td>
-              <td><img src="{{ asset('img/'.$data->image) }}" style="width:50px"></td>
-              <td><span class="label label-success">Active</span></td>
-              <td>
-              	<a href="{{ route('news.show', $data->id) }}" class="btn btn-xs btn-primary"><i class="fa fa-search-plus"></i> View</a>
-              	<a href="{{ route('news.edit', $data->id) }}" class="btn btn-xs btn-success"><i class="fa fa-edit"></i> Edit</a>
-              	<a href="#" onclick="myDelete({{$data->id}});" type="submit" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Delete</a>
-              	<form id="formDelete{{$data->id}}" action="{{ route('news.destroy', $data->id) }}" method="post">
+  <div class="col-xs-12">
+    <div class="box">
+      <div class="box-body table-responsive">
+        <table class="table table-hover">
+          <tr>
+            <th>No</th>
+            <th>Title</th>
+            <th>Action</th>
+          </tr>
+          @php $no = 1; @endphp
+          @foreach ($news as $singleNews)
+          <tr>
+            <td>{{ $no }}</td>
+            <td>{{ $singleNews->title }}</td>
+            <td>
+            	<a href="{{ route('news.show', $singleNews->id) }}" class="btn btn-xs btn-primary"><i class="fa fa-search-plus"></i> View</a>
+            	<a href="{{ route('news.edit', $singleNews->id) }}" class="btn btn-xs btn-success"><i class="fa fa-edit"></i> Edit</a>
+            	<a href="#" onclick="myDelete({{$singleNews->id}});" type="submit" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Delete</a>
+            	<form id="formDelete{{$singleNews->id}}" action="{{ route('news.destroy', $singleNews->id) }}" method="post">
         		    @csrf
         		    <input type="hidden" name="_method" value="delete">
-        		</form>
-              </td>
-            </tr>
-            @php $no++; @endphp
-            @endforeach
-          </table>
-        </div>
-        <div class="box-footer clearfix">
-          {{ $retrieveData->links() }}
-        </div>
+          		</form>
+            </td>
+          </tr>
+          @php $no++; @endphp
+          @endforeach
+        </table>
+      </div>
+      <div class="box-footer clearfix">
+        {{ $news->links() }}
       </div>
     </div>
+  </div>
 </div>
 @stop
 

@@ -40,7 +40,7 @@
 <div class="row">
   <div class="col-md-12">
     <div class="menu-nav">
-      <a href="{{ route('admin.news.index') }}" class="btn btn-warning"><i class="fa fa-list"></i> Return to list</a>
+      <a href="{{ route('news.index') }}" class="btn btn-warning"><i class="fa fa-list"></i> Return to list</a>
     </div>
   </div>
   @if (count($errors) > 0)
@@ -56,7 +56,7 @@
     </div>
   </div>
   @endif
-  <form class="form" role="form" action="@if(isset($retrieveData->id)){{ route('admin.news.update' ,$retrieveData->id) }}@else{{ route('admin.news.store') }}@endif" method="POST" enctype="multipart/form-data">
+  <form class="form" role="form" action="@if(isset($retrieveData->id)){{ route('news.update' ,$retrieveData->id) }}@else{{ route('news.store') }}@endif" method="POST" enctype="multipart/form-data">
 
     @if(isset($retrieveData->id))
         {{ method_field("PUT") }}
