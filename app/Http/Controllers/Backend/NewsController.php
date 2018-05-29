@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\NewsStoreRequest;
+use App\Http\Requests\NewsUpdateRequest;
 use App\Models\News;
 use App\Repositories\NewsRepository;
 use Auth;
@@ -65,54 +66,20 @@ class NewsController extends Controller
         return view('backend.news.edit-add', compact('retrieveData'));
     }
 
-    public function update(Request $request, $id)
+    public function update(NewsUpdateRequest $request, $id)
     {
-        $this->validate($request, [
-            'title'   => 'required',
-            'content' => 'required',
-            'image'   => 'required|mimes:jpeg,jpg,png',
-        ]);
-
-        $news = News::find($id);
-        if (empty($news)) {
-            return redirect()->route('news.index')->withError('News Not Found!');
-        }
+        $news = $this->repository->update($id, $request);
 
         if ($request->hasFile('image')) {
-            $image_path = 'img/'.$news->image;
-            if(File::exists($image_path)) {
-                File::delete($image_path);
-            }
-            
-            $destinationPath = public_path().'/img/uploads';
-            $files = $request->image;
-            $file_name = 'uploads/'. time(). '-' . str_slug($files->getClientOriginalName()).'.'. $files->getClientOriginalExtension();
-            
-            $files->move($destinationPath, $file_name);
-
-            $news->image = $file_name;
+            $this->repository->saveImage($news, $request);
         }
-
-        $news->created_by = Auth::user()->id;
-        $news->title      = request('title');
-        $news->content    = request('content');
-        $news->save();
 
         return redirect()->route('news.index')->withSuccess('Update News Success!');
     }
 
     public function destroy($id)
     {
-    	$news = News::find($id);
-        if (empty($news)) {
-            return redirect()->route('news.index')->withError('News Not Found!');
-        }
-        $image_path = 'img/'.$news->image;
-        if(File::exists($image_path)) {
-            File::delete($image_path);
-        }
-        $news->delete();
-
+        $news = $this->repository->destroy($id);
         return redirect()->route('news.index')->withSuccess('Delete News Success!');
     }
 

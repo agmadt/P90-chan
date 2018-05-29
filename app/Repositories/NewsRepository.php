@@ -4,14 +4,17 @@ namespace App\Repositories;
 
 use App\Models\News;
 use Illuminate\Support\Facades\Auth;
+use File;
 
 class NewsRepository
 {
     private $model;
+    private $path_image;
 
     public function __construct(News $news)
     {
         $this->model = $news;
+        $this->path_image = public_path() . '/img/news/';
     }
 
     public function find($id, $with = null)
@@ -65,9 +68,12 @@ class NewsRepository
 
     public function update($id, $request)
     {
+        $user = Auth::user();
+
         $news = $this->find($id);
         $news->title = $request->title;
         $news->content = $request->content;
+        $news->created_by = $user->id;
         $news->save();
 
         return $news;
@@ -75,7 +81,9 @@ class NewsRepository
 
     public function saveImage(News $news, $request)
     {
-        $destination = public_path() . '/img/news/';
+        $destination = $this->path_image;
+        $this->deleteImage($destination . $news->image);
+
         $files = $request->image;
         $fileName = time(). '-' . str_slug($files->getClientOriginalName()) . '.' . $files->getClientOriginalExtension();
 
@@ -89,12 +97,16 @@ class NewsRepository
 
     public function deleteImage($imagePath)
     {
-        File::delete($imagePath);
+        if(File::exists($imagePath)) {
+            File::delete($imagePath);
+        }
     }
 
     public function destroy($id)
     {
-        $this->find($id)->delete();
+        $news = $this->find($id);
+        $this->deleteImage($this->path_image . $news->image);
+        $news->delete();
     }
 }
 

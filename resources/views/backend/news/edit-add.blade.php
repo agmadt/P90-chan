@@ -116,7 +116,7 @@
         <div class="box-body" style="">
           <div class="form-group">
             @if(isset($retrieveData->image))
-                <img src="{{ asset('img/'.$retrieveData->image) }}" style="width:100%" />
+                <img src="{{ asset('img/news/'.$retrieveData->image) }}" style="width:100%" />
             @endif
             <input type="file" id="exampleInputFile" name="image">
           </div>
@@ -124,7 +124,7 @@
       </div>
     </div>
     <div class="col-md-4">
-      <button type="submit" class="btn btn-info ">CREATE</button>
+      <button type="submit" class="btn btn-info">@if(isset($retrieveData->id)){{ 'UPDATE' }}@else{{ 'CREATE' }}@endif</button>
     </div>
   </form>
 </div>
