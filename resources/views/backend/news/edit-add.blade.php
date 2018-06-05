@@ -116,7 +116,7 @@
         <div class="box-body" style="">
           <div class="form-group">
             @if(isset($retrieveData->image))
-                <img src="{{ asset('img/news/'.$retrieveData->image) }}" style="width:100%" />
+                <img src="{{ Storage::url($retrieveData->image) }}" style="width:100%" />
             @endif
             <input type="file" id="exampleInputFile" name="image">
           </div>

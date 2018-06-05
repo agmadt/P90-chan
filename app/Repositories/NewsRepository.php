@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Models\News;
 use Illuminate\Support\Facades\Auth;
 use File;
+use Storage;
 
 class NewsRepository
 {
@@ -81,31 +82,23 @@ class NewsRepository
 
     public function saveImage(News $news, $request)
     {
-        $destination = $this->path_image;
-        $this->deleteImage($destination . $news->image);
-
-        $files = $request->image;
-        $fileName = time(). '-' . str_slug($files->getClientOriginalName()) . '.' . $files->getClientOriginalExtension();
-
+        $this->deleteImage($news->image);
+        $fileName = $request->image->store('news');
         $news->image = $fileName;
         $news->save();
-
-        $files->move($destination, $fileName);
 
         return $news;
     }
 
     public function deleteImage($imagePath)
     {
-        if(File::exists($imagePath)) {
-            File::delete($imagePath);
-        }
+        Storage::delete($imagePath);
     }
 
     public function destroy($id)
     {
         $news = $this->find($id);
-        $this->deleteImage($this->path_image . $news->image);
+        $this->deleteImage($news->image);
         $news->delete();
     }
 }

@@ -24,6 +24,8 @@
 @stop
 
 @section('content')
+@php
+@endphp
 <div class="row">
   <div class="col-md-12">
     <div class="menu-nav">
@@ -57,7 +59,7 @@
       </div>
       <div class="box-body">
         <p>
-          <img src="{{ asset('img/news/'.$news->image) }}" style="width: 100%;">
+          <img src="{{ Storage::url($news->image) }}" style="width: 100%;">
         </p>
       </div>
     </div>

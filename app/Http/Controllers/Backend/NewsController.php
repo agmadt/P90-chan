@@ -8,7 +8,6 @@ use App\Http\Requests\NewsUpdateRequest;
 use App\Models\News;
 use App\Repositories\NewsRepository;
 use Auth;
-use File;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
