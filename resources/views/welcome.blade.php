@@ -69,7 +69,8 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel GITGIT
+                    AGAM GANTENG
+
                 </div>
 
                 <div class="links">
