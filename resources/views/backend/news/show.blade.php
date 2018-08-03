@@ -24,10 +24,12 @@
 @stop
 
 @section('content')
+@php
+@endphp
 <div class="row">
   <div class="col-md-12">
     <div class="menu-nav">
-      <a href="{{ route('admin.news.index') }}" class="btn btn-warning"><i class="fa fa-list"></i> Return to list</a>
+      <a href="{{ route('news.index') }}" class="btn btn-warning"><i class="fa fa-list"></i> Return to list</a>
     </div>
   </div>
   <div class="col-md-12">  
@@ -57,7 +59,7 @@
       </div>
       <div class="box-body">
         <p>
-          <img src="{{ asset('img/'.$news->image) }}" style="width: 100%;">
+          <img src="{{ Storage::url($news->image) }}" style="width: 100%;">
         </p>
       </div>
     </div>

@@ -40,7 +40,7 @@
 <div class="row">
   <div class="col-md-12">
     <div class="menu-nav">
-      <a href="{{ route('admin.news.index') }}" class="btn btn-warning"><i class="fa fa-list"></i> Return to list</a>
+      <a href="{{ route('news.index') }}" class="btn btn-warning"><i class="fa fa-list"></i> Return to list</a>
     </div>
   </div>
   @if (count($errors) > 0)
@@ -56,7 +56,7 @@
     </div>
   </div>
   @endif
-  <form class="form" role="form" action="@if(isset($retrieveData->id)){{ route('admin.news.update' ,$retrieveData->id) }}@else{{ route('admin.news.store') }}@endif" method="POST" enctype="multipart/form-data">
+  <form class="form" role="form" action="@if(isset($retrieveData->id)){{ route('news.update' ,$retrieveData->id) }}@else{{ route('news.store') }}@endif" method="POST" enctype="multipart/form-data">
 
     @if(isset($retrieveData->id))
         {{ method_field("PUT") }}
@@ -116,7 +116,7 @@
         <div class="box-body" style="">
           <div class="form-group">
             @if(isset($retrieveData->image))
-                <img src="{{ asset('img/'.$retrieveData->image) }}" style="width:100%" />
+                <img src="{{ Storage::url($retrieveData->image) }}" style="width:100%" />
             @endif
             <input type="file" id="exampleInputFile" name="image">
           </div>
@@ -124,7 +124,7 @@
       </div>
     </div>
     <div class="col-md-4">
-      <button type="submit" class="btn btn-info ">CREATE</button>
+      <button type="submit" class="btn btn-info">@if(isset($retrieveData->id)){{ 'UPDATE' }}@else{{ 'CREATE' }}@endif</button>
     </div>
   </form>
 </div>

@@ -2,18 +2,33 @@
 
 namespace App\Http\Controllers\Backend;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\NewsStoreRequest;
+use App\Http\Requests\NewsUpdateRequest;
 use App\Models\News;
+use App\Repositories\NewsRepository;
 use Auth;
-use File;
+use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
+    private $repository;
+
+    public function __construct(NewsRepository $newsRepository)
+    {
+        $this->repository = $newsRepository;
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
-    	$retrieveData = News::latest('created_at')->paginate(10);
-    	return view('backend.news.index', compact('retrieveData'));
+        $news = $this->repository->paginate(10);
+
+    	$data = [
+            'news' => $news
+        ];
+
+    	return view('backend.news.index', $data);
     }
     
     public function create()
@@ -21,35 +36,22 @@ class NewsController extends Controller
     	return view('backend.news.edit-add');
     }
 
-    public function store(Request $request)
+    public function store(NewsStoreRequest $request)
     {
-    	$this->validate($request, [
-            'title'   => 'required',
-            'content' => 'required',
-            'image'   => 'required|mimes:jpeg,jpg,png',
-        ]);
-		if ($request->hasFile('image')) {
-			$destinationPath = public_path().'/img/uploads';
-			$files = $request->image;
-			$file_name = 'uploads/'. time(). '-' . str_slug(stristr($files->getClientOriginalName(), '.', true)).'.'. $files->getClientOriginalExtension();
-			$files->move($destinationPath, $file_name);
-		}
+        $news = $this->repository->store($request);
 
-		$news             = new News;
-		$news->created_by = Auth::user()->id;
-		$news->title      = request('title');
-		$news->content    = request('content');
-		$news->image      = $file_name;
-     	$news->save();
+        if ($request->hasFile('image')) {
+            $this->repository->saveImage($news, $request);
+        }
 
-     	return redirect()->route('admin.news.index')->withSuccess('Add News Success!');
+     	return redirect()->route('news.index')->withSuccess('Add News Success!');
     }
 
     public function show($id)
     {
         $news = News::find($id);
         if (empty($news)) {
-            return redirect()->route('admin.news.index')->withError('News Not Found!');
+            return redirect()->route('news.index')->withError('News Not Found!');
         }
         return view('backend.news.show', compact('news'));
     }
@@ -58,60 +60,26 @@ class NewsController extends Controller
     {
         $retrieveData = News::find($id);
         if (empty($retrieveData)) {
-            return redirect()->route('admin.news.index')->withError('News Not Found!');
+            return redirect()->route('news.index')->withError('News Not Found!');
         }
         return view('backend.news.edit-add', compact('retrieveData'));
     }
 
-    public function update(Request $request, $id)
+    public function update(NewsUpdateRequest $request, $id)
     {
-        $this->validate($request, [
-            'title'   => 'required',
-            'content' => 'required',
-            'image'   => 'required|mimes:jpeg,jpg,png',
-        ]);
-
-        $news = News::find($id);
-        if (empty($news)) {
-            return redirect()->route('admin.news.index')->withError('News Not Found!');
-        }
+        $news = $this->repository->update($id, $request);
 
         if ($request->hasFile('image')) {
-            $image_path = 'img/'.$news->image;
-            if(File::exists($image_path)) {
-                File::delete($image_path);
-            }
-            
-            $destinationPath = public_path().'/img/uploads';
-            $files = $request->image;
-            $file_name = 'uploads/'. time(). '-' . str_slug($files->getClientOriginalName()).'.'. $files->getClientOriginalExtension();
-            
-            $files->move($destinationPath, $file_name);
-
-            $news->image = $file_name;
+            $this->repository->saveImage($news, $request);
         }
 
-        $news->created_by = Auth::user()->id;
-        $news->title      = request('title');
-        $news->content    = request('content');
-        $news->save();
-
-        return redirect()->route('admin.news.index')->withSuccess('Update News Success!');
+        return redirect()->route('news.index')->withSuccess('Update News Success!');
     }
 
     public function destroy($id)
     {
-    	$news = News::find($id);
-        if (empty($news)) {
-            return redirect()->route('admin.news.index')->withError('News Not Found!');
-        }
-        $image_path = 'img/'.$news->image;
-        if(File::exists($image_path)) {
-            File::delete($image_path);
-        }
-        $news->delete();
-
-        return redirect()->route('admin.news.index')->withSuccess('Delete News Success!');
+        $news = $this->repository->destroy($id);
+        return redirect()->route('news.index')->withSuccess('Delete News Success!');
     }
 
 }
