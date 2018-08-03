@@ -18,7 +18,7 @@ class CreateBabiesTable extends Migration
             $table->string('name');
             $table->string('photos');
             $table->string('profile')->nullable();
-            $table->string('date_of_birth')->nullable();
+            $table->date('date_of_birth')->nullable();
             $table->timestamps();
         });
     }
