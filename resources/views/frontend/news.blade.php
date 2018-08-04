@@ -7,12 +7,11 @@
           <div class="row">
               <div class="col-md-12">
                   <div class="breadcrumb-text">
-                      <h1 class="text-center">Search</h1>
+                      <h1 class="text-center">Berita</h1>
                       <div class="breadcrumb-bar">
                           <ul class="breadcrumb">
                               <li><a href="{{ route('index') }}">Beranda</a></li>
-                              <li>Search</li>
-                              <li>{{ request('query') }}</li>
+                              <li>Berita</li>
                           </ul>
                       </div>
                   </div>
