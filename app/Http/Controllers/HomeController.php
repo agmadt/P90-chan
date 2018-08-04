@@ -6,14 +6,17 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         return view('frontend.index');
+    }
+
+    public function search()
+    {
+    	$data = [
+    		
+    	];
+    	
+        return view('frontend.search', $data);
     }
 }

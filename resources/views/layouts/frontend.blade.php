@@ -57,7 +57,7 @@
                                 <div class="search">
                                     <div class="search-form">
                                         <form id="search-form" action="{{ route('search') }}" method="GET">
-                                            <input type="search" placeholder="Search here..." name="search" />
+                                            <input type="search" placeholder="Search here..." name="query" />
                                             <button type="submit">
                                                 <span><i class="fa fa-search"></i></span>
                                             </button>
@@ -91,50 +91,45 @@
         </div>
     </header>
 
-    <div class="slider-area slider-three-area">
-        <div class="preview-2">
-            <div id="nivoslider" class="slides">    
-                <img src="img/slider/5.jpg" alt="" title="#slider-1-caption1"/>
-                <img src="img/slider/6.jpg" alt="" title="#slider-1-caption2"/>
-            </div> 
-            <div id="slider-1-caption1" class="nivo-html-caption nivo-caption">
-                <div class="banner-content slider-1">
-                    <div class="container">
+    @yield('content')
+
+    <div class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="footer-info-container text-center section-padding">
+                        <div class="footer-logo">
+                            <a href="#">PAMBAYI LOGO</a>
+                        </div>
+                        <div class="footer-info">
+                            <span><i class="fa fa-map-marker"></i>Jl. Antah Berantah</span>
+                            <span><i class="fa fa-envelope"></i>admin@pambayi.com</span>
+                            <span><i class="fa fa-phone"></i>123123332</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="footer-container">
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="text-content hidden-xs">
-                                    <p class="sub-title">Your Child can be a genius</p>
-                                    <h1 class="title1">best Education for <br> Kids perfectly</h1>
-                                    <div class="banner-readmore">
-                                        <a title="Read more" href="#">Enroll your child</a> 
-                                    </div>
+                                <span>&copy; 2018 <a href="#">Pambayi</a>. All rights reserved</span>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="social-links">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>  
-            <div id="slider-1-caption2" class="nivo-html-caption nivo-caption">
-                <div class="banner-content slider-2">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="text-content hidden-xs">
-                                    <p class="sub-title">Learn computer with fun</p>
-                                    <h1 class="title1">best Education for<br> Kids perfectly</h1>
-                                    <div class="banner-readmore">
-                                        <a title="Read more" href="#">Enroll your child</a> 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>    
+            </div>
         </div>
     </div>
 
-    @yield('content')
     <script type="text/javascript" src="{{ asset('js/frontend/vendor/jquery-1.12.3.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/frontend/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/frontend/bootstrap-toggle.min.js') }}"></script>
