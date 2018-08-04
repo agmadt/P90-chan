@@ -318,5 +318,4 @@
         </div>
     </div>
   </div>
-  <!--End of Footer Area-->
 @stop
