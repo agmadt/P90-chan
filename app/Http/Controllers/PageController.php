@@ -12,4 +12,18 @@ class PageController extends Controller
 
         return view('frontend.about', $data);
     }
+
+    public function donation()
+    {
+        $data = [];
+
+        return view('frontend.donation', $data);
+    }
+
+    public function contactUs()
+    {
+        $data = [];
+
+        return view('frontend.contact', $data);
+    }
 }

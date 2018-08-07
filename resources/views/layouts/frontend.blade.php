@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>P-90 Chan</title>
+    <title>P-90 Chan - @yield('title')</title>
     <link href='https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700' rel='stylesheet' type='text/css'>
     <link href="{{ asset('css/frontend/animate.css') }}" rel="stylesheet">
     <link href="{{ asset('css/frontend/bootstrap.min.css') }}" rel="stylesheet">
@@ -147,5 +147,6 @@
     <script type="text/javascript" src="{{ asset('js/frontend/wow.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/frontend/main.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/frontend/custom.js') }}"></script>
+    @yield('extrascripts')
 </body>
 </html>

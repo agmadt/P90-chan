@@ -1,5 +1,7 @@
 @extends('layouts.frontend')
 
+@section('title', 'Tentang Kami')
+
 @section('content')
   <div class="breadcrumb-banner-area">
       <div class="container">

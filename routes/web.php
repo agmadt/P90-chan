@@ -8,7 +8,7 @@ Route::get('/page', 'PageController@about');
 Route::get('/page/about', 'PageController@about')->name('about');
 Route::get('/page/donation', 'PageController@donation')->name('donation');
 Route::get('/page/contact-us', 'PageController@contactUs')->name('contact-us');
-Route::get('/page/galeries', 'PageController@contactUs')->name('contact-us');
+Route::get('/page/galeries', 'PageController@galleries')->name('galleries');
 
 Route::get('/news', 'NewsController@index')->name('news');
 Route::get('/news/{slug}', 'NewsController@index');
