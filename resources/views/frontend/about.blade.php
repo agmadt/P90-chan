@@ -27,7 +27,6 @@
                   <div class="section-title-wrapper">
                       <div class="section-title">
                           <h3>Siapa Kami</h3>
-                          <p>Fable daycare, preschool, and kindergarten</p>
                       </div>
                   </div> 
               </div>       

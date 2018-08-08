@@ -59,17 +59,24 @@
                           <h3>Kirimi Kami Pesan</h3>
                       </div>
                       <div class="contact-form-container">
-                          <form action="mail.php" method="post">
-                              <div class="row">
-                                  <div class="col-md-6">
-                                      <input type="text" name="name" placeholder="Nama *">
-                                  </div>
-                                  <div class="col-md-6">
-                                      <input type="email" name="email" placeholder="Email *">
-                                  </div>
-                              </div>
-                              <textarea name="message" class="yourmessage" placeholder="Pesan"></textarea>
-                              <button type="submit" class="button-default button-yellow"><i class="fa fa-send"></i>Submit</button>
+                          <form method="post">
+                            {{ csrf_field() }}
+                            <div class="row">
+                                <div class="col-md-6 mb2">
+                                    <input type="text" name="name" placeholder="Nama *" class="mb0">
+                                    @if ($errors->has('name'))
+                                        <span class="help-block">{{ $errors->first('name') }}</span>
+                                    @endif
+                                </div>
+                                <div class="col-md-6 mb2">
+                                    <input type="email" name="email" placeholder="Email *" class="mb0">
+                                    @if ($errors->has('email'))
+                                        <span class="help-block">{{ $errors->first('email') }}</span>
+                                    @endif
+                                </div>
+                            </div>
+                            <textarea name="message" class="yourmessage" placeholder="Pesan"></textarea>
+                            <button type="submit" class="button-default button-yellow"><i class="fa fa-send"></i>Submit</button>
                           </form>
                       </div>
                   </div>

@@ -83,6 +83,14 @@ class SiteSettingSeeder extends Seeder
                 'value' => '',
             ],
             [
+                'key' => 'setting_about_us_text',
+                'value' => '',
+            ],
+            [
+                'key' => 'setting_about_us_image',
+                'value' => '',
+            ],
+            [
                 'key' => 'setting_map_api_key',
                 'value' => '',
             ],
@@ -92,6 +100,17 @@ class SiteSettingSeeder extends Seeder
             ],
             [
                 'key' => 'setting_map_lng',
+                'value' => '',
+            ],
+            [
+                'key' => 'setting_facebook_url',
+                ,
+            [
+                'key' => 'setting_twitter_url',
+                'value' => '',
+            ],
+            [
+                'key' => 'setting_instagram_url',
                 'value' => '',
             ]
         ]);
