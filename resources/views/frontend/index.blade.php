@@ -174,11 +174,10 @@
         </div>
     </div>
   </div>
-  <div class="gallery-area gallery-fullwidth section-gray section-padding">
+  <div class="gallery-area gallery-fullwidth section-gray section-padding pb3">
     <div class="section-title-wrapper title-yellow">
         <div class="section-title">
             <h3>Galeri Foto</h3>
-            <p>Lihat Foto Kami</p>
         </div>
     </div> 
     <div class="gallery-wrapper">
@@ -220,8 +219,8 @@
         </div>   
     </div>
     <div class="view-gallery text-center">
-        <h4>See Our Kindergarten <span>Photo Gallery!</span></h4>
-        <a href="#" class="button-default">View Now</a>
+        <h4>Galeri Foto</h4>
+        <a href="{{ route('galleries') }}" class="button-default">Lihat</a>
     </div>
   </div>
   <div class="teachers-large-carousel-area section-padding-top">
@@ -231,7 +230,6 @@
                 <div class="section-title-wrapper title-yellow">
                     <div class="section-title">
                         <h3>Profil Pengurus</h3>
-                        <p>We are glad to introduce our professional staff</p>
                     </div>
                 </div> 
             </div>       
@@ -316,4 +314,32 @@
       <div id="googleMap" style="width:100%;height:451px;"></div>
     </div>
   </div>
+@stop
+
+@section('extrascripts')
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuU_0_uLMnFM-2oWod_fzC0atPZj7dHlU"></script>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script>
+    function initialize() {
+      var mapOptions = {
+          zoom: 15,
+          scrollwheel: false,
+          center: new google.maps.LatLng(23.763494, 90.432226)
+      };
+
+      var map = new google.maps.Map(document.getElementById('googleMap'),
+        mapOptions);
+
+
+      var marker = new google.maps.Marker({
+          position: map.getCenter(),
+          animation:google.maps.Animation.BOUNCE,
+          icon: 'img/map-marker.png',
+          map: map
+      });
+              
+    }
+              
+    google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
 @stop

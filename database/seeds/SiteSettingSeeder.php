@@ -81,6 +81,18 @@ class SiteSettingSeeder extends Seeder
             [
                 'key' => 'setting_home_block_four_text',
                 'value' => '',
+            ],
+            [
+                'key' => 'setting_map_api_key',
+                'value' => '',
+            ],
+            [
+                'key' => 'setting_map_lat',
+                'value' => '',
+            ],
+            [
+                'key' => 'setting_map_lng',
+                'value' => '',
             ]
         ]);
     }
