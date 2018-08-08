@@ -31,8 +31,12 @@
                     <div class="row">
                         <div class="col-md-3 col-sm-12">
                             <div class="logo">
-                                <a href="index.html">
-                                    <h2>Logo</h2>
+                                <a href="{{ route('index') }}">
+                                    @if (!empty($siteSetting['setting_logo_header']))
+                                        <img src="{{ asset('img/' . $siteSetting['setting_logo_header']) }}" class="img-responsive">
+                                    @else
+                                        <h2>Logo</h2>
+                                    @endif
                                 </a>
                             </div>
                         </div>
@@ -57,7 +61,7 @@
                                 <div class="search">
                                     <div class="search-form">
                                         <form id="search-form" action="{{ route('search') }}" method="GET">
-                                            <input type="search" placeholder="Search here..." name="query" />
+                                            <input type="search" placeholder="Cari.." name="query" />
                                             <button type="submit">
                                                 <span><i class="fa fa-search"></i></span>
                                             </button>
@@ -77,11 +81,11 @@
                         <div class="mobile-menu">
                             <nav id="dropdown">
                                 <ul>
-                                    <li class="current"><a href="index.html">Beranda</a></li>
-                                    <li><a href="about.html">Tentang</a></li>
-                                    <li><a href="about.html">Berita</a></li>
-                                    <li><a href="about.html">Donasi</a></li>
-                                    <li><a href="about.html">Kontak Kami</a></li>
+                                    <li class="current"><a href="{{ route('index') }}">Beranda</a></li>
+                                    <li><a href="{{ route('about') }}">Tentang</a></li>
+                                    <li><a href="{{ route('news') }}">Berita</a></li>
+                                    <li><a href="{{ route('donation') }}">Donasi</a></li>
+                                    <li><a href="{{ route('contact-us') }}">Kontak Kami</a></li>
                                 </ul>
                             </nav>
                         </div>                  
@@ -99,12 +103,24 @@
                 <div class="col-md-12">
                     <div class="footer-info-container text-center section-padding">
                         <div class="footer-logo">
-                            <a href="#">PAMBAYI LOGO</a>
+                            <a href="{{ route('index') }}">
+                                @if (!empty($siteSetting['setting_logo_footer']))
+                                        <img src="{{ asset('img/' . $siteSetting['setting_logo_footer']) }}" class="img-responsive">
+                                @else
+                                    PAMBAYI LOGO
+                                @endif
+                            </a>
                         </div>
                         <div class="footer-info">
-                            <span><i class="fa fa-map-marker"></i>Jl. Antah Berantah</span>
-                            <span><i class="fa fa-envelope"></i>admin@pambayi.com</span>
-                            <span><i class="fa fa-phone"></i>123123332</span>
+                            @if (!empty($siteSetting['setting_address']))
+                                <span><i class="fa fa-map-marker"></i>{{ $siteSetting['setting_address'] }}</span>
+                            @endif
+                            @if (!empty($siteSetting['setting_email']))
+                                <span><i class="fa fa-envelope"></i>{{ $siteSetting['setting_email'] }}</span>
+                            @endif
+                            @if (!empty($siteSetting['setting_phone']))
+                                <span><i class="fa fa-phone"></i>{{ $siteSetting['setting_phone'] }}</span>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -118,9 +134,15 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="social-links">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                    @if (!empty($siteSetting['setting_facebook_url']))
+                                        <a href="{{ $siteSetting['setting_facebook_url'] }}"><i class="fa fa-facebook"></i></a>
+                                    @endif
+                                    @if (!empty($siteSetting['setting_twitter_url']))
+                                        <a href="{{ $siteSetting['setting_twitter_url'] }}"><i class="fa fa-twitter"></i></a>
+                                    @endif
+                                    @if (!empty($siteSetting['setting_instagram_url']))
+                                        <a href="{{ $siteSetting['setting_instagram_url'] }}"><i class="fa fa-instagram"></i></a>
+                                    @endif
                                 </div>
                             </div>
                         </div>

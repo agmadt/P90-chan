@@ -33,7 +33,6 @@ class SiteSettingSeeder extends Seeder
                 'key' => 'setting_phone',
                 'value' => '',
             ],
-            
             [
                 'key' => 'setting_home_block_one_icon',
                 'value' => '',
@@ -104,7 +103,8 @@ class SiteSettingSeeder extends Seeder
             ],
             [
                 'key' => 'setting_facebook_url',
-                ,
+                'value' => '',
+            ],
             [
                 'key' => 'setting_twitter_url',
                 'value' => '',

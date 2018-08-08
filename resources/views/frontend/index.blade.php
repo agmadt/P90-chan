@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-
+@section('title', 'Beranda')
 
 @section('content')
 
@@ -51,38 +51,94 @@
         <div class="row">
             <div class="col-md-3 col-sm-4 activity">
                 <div class="single-activity">
-                    <div class="single-activity-icon">
-                        <i class="fa fa-male"></i>
-                    </div>
-                    <h4>Mandiri</h4>
-                    <p>Biaya operasional dipenuhi dari hasil unit usaha.</p>
+                    @if (!empty($siteSetting['setting_home_block_one_icon']))
+                        <div class="single-activity-icon">
+                            <i class="fa {{ $siteSetting['setting_home_block_one_icon'] }}"></i>
+                        </div>
+                    @else
+                        <div class="single-activity-icon">
+                            <i class="fa fa-male"></i>
+                        </div>
+                    @endif
+                    @if (!empty($siteSetting['setting_home_block_one_title']))
+                        <h4>{{ $siteSetting['setting_home_block_one_title'] }}</h4>
+                    @else
+                        <h4>Mandiri</h4>
+                    @endif
+                    @if (!empty($siteSetting['setting_home_block_one_text']))
+                        <p>{{ $siteSetting['setting_home_block_one_text'] }}</p>
+                    @else
+                        <p>Biaya operasional dipenuhi dari hasil unit usaha.</p>
+                    @endif
                 </div>
             </div>
             <div class="col-md-3 col-sm-4 activity">
                 <div class="single-activity">
-                    <div class="single-activity-icon">
-                        <i class="fa fa-handshake"></i>
-                    </div>
-                    <h4>Amanah</h4>
-                    <p>Kami mengunggah pemasukan dan pengeluaran bulanan yang dapat anda cek.</p>
+                    @if (!empty($siteSetting['setting_home_block_two_icon']))
+                        <div class="single-activity-icon">
+                            <i class="fa {{ $siteSetting['setting_home_block_two_icon'] }}"></i>
+                        </div>
+                    @else
+                        <div class="single-activity-icon">
+                            <i class="fa fa-handshake"></i>
+                        </div>
+                    @endif
+                    @if (!empty($siteSetting['setting_home_block_two_title']))
+                        <h4>{{ $siteSetting['setting_home_block_two_title'] }}</h4>
+                    @else
+                        <h4>Amanah</h4>
+                    @endif
+                    @if (!empty($siteSetting['setting_home_block_two_text']))
+                        <p>{{ $siteSetting['setting_home_block_two_text'] }}</p>
+                    @else
+                        <p>Kami mengunggah pemasukan dan pengeluaran bulanan yang dapat anda cek.</p>
+                    @endif
                 </div>
             </div>
             <div class="col-md-3 col-sm-4 activity">
                 <div class="single-activity">
-                    <div class="single-activity-icon">
-                        <i class="fa fa-user-graduate"></i>
-                    </div>
-                    <h4>Profesional</h4>
-                    <p>Dikelola oleh orang yang ahli dibidang nya.</p>
+                    @if (!empty($siteSetting['setting_home_block_three_icon']))
+                        <div class="single-activity-icon">
+                            <i class="fa {{ $siteSetting['setting_home_block_three_icon'] }}"></i>
+                        </div>
+                    @else
+                        <div class="single-activity-icon">
+                            <i class="fa fa-user-graduate"></i>
+                        </div>
+                    @endif
+                    @if (!empty($siteSetting['setting_home_block_three_title']))
+                        <h4>{{ $siteSetting['setting_home_block_three_title'] }}</h4>
+                    @else
+                        <h4>Profesional</h4>
+                    @endif
+                    @if (!empty($siteSetting['setting_home_block_three_text']))
+                        <p>{{ $siteSetting['setting_home_block_three_text'] }}</p>
+                    @else
+                        <p>Dikelola oleh orang yang ahli dibidang nya.</p>
+                    @endif
                 </div>
             </div>
             <div class="col-md-3 hidden-sm activity">
                 <div class="single-activity">
-                    <div class="single-activity-icon">
-                        <i class="fa fa-pencil"></i>
-                    </div>
-                    <h4>Blok 4</h4>
-                    <p>Yang ini bisa diisi</p>
+                    @if (!empty($siteSetting['setting_home_block_four_icon']))
+                        <div class="single-activity-icon">
+                            <i class="fa {{ $siteSetting['setting_home_block_four_icon'] }}"></i>
+                        </div>
+                    @else
+                        <div class="single-activity-icon">
+                            <i class="fa fa-pencil"></i>
+                        </div>
+                    @endif
+                    @if (!empty($siteSetting['setting_home_block_four_title']))
+                        <h4>{{ $siteSetting['setting_home_block_four_title'] }}</h4>
+                    @else
+                        <h4>Blok 4</h4>
+                    @endif
+                    @if (!empty($siteSetting['setting_home_block_four_text']))
+                        <p>{{ $siteSetting['setting_home_block_four_text'] }}</p>
+                    @else
+                        <p>Yang ini bisa diisi</p>
+                    @endif
                 </div>
             </div>
         </div>
@@ -223,92 +279,6 @@
         <a href="{{ route('galleries') }}" class="button-default">Lihat</a>
     </div>
   </div>
-  <div class="teachers-large-carousel-area section-padding-top">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-title-wrapper title-yellow">
-                    <div class="section-title">
-                        <h3>Profil Pengurus</h3>
-                    </div>
-                </div> 
-            </div>       
-        </div>
-        <div class="row">
-            <div class="teacher-carousel carousel-style-one">
-                <div class="col-md-4">
-                    <div class="teacher-large-item text-center">
-                        <div class="teacher-large-image">
-                            <img src="img/teacher/6.jpg" alt="">
-                        </div>
-                        <div class="single-teacher-large-carousel">
-                            <h4>Kailo</h4>
-                            <span>Professor, Harvard College</span>
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                            <div class="social-links">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>   
-                    </div>    
-                </div>
-                <div class="col-md-4">
-                    <div class="teacher-large-item text-center">
-                        <div class="teacher-large-image">
-                            <img src="img/teacher/7.jpg" alt="">
-                        </div>
-                        <div class="single-teacher-large-carousel">
-                            <h4>graves</h4>
-                            <span>Professor, Harvard College</span>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry, has been the industry's standard dummy.</p>
-                            <div class="social-links">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>   
-                    </div>    
-                </div>
-                <div class="col-md-4">
-                    <div class="teacher-large-item text-center">
-                        <div class="teacher-large-image">
-                            <img src="img/teacher/11.jpg" alt="">
-                        </div>
-                        <div class="single-teacher-large-carousel">
-                            <h4>poppy</h4>
-                            <span>Professor, Harvard College</span>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin, many desktop publishing.</p>
-                            <div class="social-links">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div> 
-                    </div>    
-                </div>
-                <div class="col-md-4">
-                    <div class="teacher-large-item text-center">
-                        <div class="teacher-large-image">
-                            <img src="img/teacher/6.jpg" alt="">
-                        </div>
-                        <div class="single-teacher-large-carousel">
-                            <h4>Kailo</h4>
-                            <span>Professor, Harvard College</span>
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                            <div class="social-links">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-google-plus"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>   
-                    </div>    
-                </div>
-            </div>    
-        </div>
-    </div>
-  </div>
   <div class="google-map-area">
     <div id="contacts" class="map-area">
       <div id="googleMap" style="width:100%;height:451px;"></div>
@@ -317,14 +287,14 @@
 @stop
 
 @section('extrascripts')
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuU_0_uLMnFM-2oWod_fzC0atPZj7dHlU"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{ $siteSetting['setting_map_api_key'] }}"></script>
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
   <script>
     function initialize() {
       var mapOptions = {
           zoom: 15,
           scrollwheel: false,
-          center: new google.maps.LatLng(23.763494, 90.432226)
+          center: new google.maps.LatLng({{ $siteSetting['setting_map_lat'] }}, {{ $siteSetting['setting_map_lng'] }})
       };
 
       var map = new google.maps.Map(document.getElementById('googleMap'),
@@ -334,7 +304,7 @@
       var marker = new google.maps.Marker({
           position: map.getCenter(),
           animation:google.maps.Animation.BOUNCE,
-          icon: 'img/map-marker.png',
+          icon: 'image/map-marker.png',
           map: map
       });
               
