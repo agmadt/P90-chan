@@ -14,104 +14,82 @@ class SiteSettingSeeder extends Seeder
     {
     	SiteSetting::insert([
             [
-                'key' => 'setting_logo_header',
-                'value' => '',
+                'key' => 'setting_logo_header'
             ],
             [
-                'key' => 'setting_logo_footer',
-                'value' => '',
+                'key' => 'setting_logo_footer'
             ],
             [
-                'key' => 'setting_address',
-                'value' => '',
+                'key' => 'setting_address'
             ],
             [
-                'key' => 'setting_email',
-                'value' => '',
+                'key' => 'setting_email'
             ],
             [
-                'key' => 'setting_phone',
-                'value' => '',
+                'key' => 'setting_phone'
             ],
             [
-                'key' => 'setting_home_block_one_icon',
-                'value' => '',
+                'key' => 'setting_home_block_one_icon'
             ],
             [
-                'key' => 'setting_home_block_two_icon',
-                'value' => '',
+                'key' => 'setting_home_block_two_icon'
             ],
             [
-                'key' => 'setting_home_block_three_icon',
-                'value' => '',
+                'key' => 'setting_home_block_three_icon'
             ],
             [
-                'key' => 'setting_home_block_four_icon',
-                'value' => '',
+                'key' => 'setting_home_block_four_icon'
             ],
             [
-                'key' => 'setting_home_block_one_title',
-                'value' => '',
+                'key' => 'setting_home_block_one_title'
             ],
             [
-                'key' => 'setting_home_block_two_title',
-                'value' => '',
+                'key' => 'setting_home_block_two_title'
             ],
             [
-                'key' => 'setting_home_block_three_title',
-                'value' => '',
+                'key' => 'setting_home_block_three_title'
             ],
             [
-                'key' => 'setting_home_block_four_title',
-                'value' => '',
+                'key' => 'setting_home_block_four_title'
             ],
             [
-                'key' => 'setting_home_block_one_text',
-                'value' => '',
+                'key' => 'setting_home_block_one_text'
             ],
             [
-                'key' => 'setting_home_block_two_text',
-                'value' => '',
+                'key' => 'setting_home_block_two_text'
             ],
             [
-                'key' => 'setting_home_block_three_text',
-                'value' => '',
+                'key' => 'setting_home_block_three_text'
             ],
             [
-                'key' => 'setting_home_block_four_text',
-                'value' => '',
+                'key' => 'setting_home_block_four_text'
             ],
             [
-                'key' => 'setting_about_us_text',
-                'value' => '',
+                'key' => 'setting_about_us_text'
             ],
             [
-                'key' => 'setting_about_us_image',
-                'value' => '',
+                'key' => 'setting_about_us_image'
             ],
             [
-                'key' => 'setting_map_api_key',
-                'value' => '',
+                'key' => 'setting_map_api_key'
             ],
             [
-                'key' => 'setting_map_lat',
-                'value' => '',
+                'key' => 'setting_map_lat'
             ],
             [
-                'key' => 'setting_map_lng',
-                'value' => '',
+                'key' => 'setting_map_lng'
             ],
             [
-                'key' => 'setting_facebook_url',
-                'value' => '',
+                'key' => 'setting_facebook_url'
             ],
             [
-                'key' => 'setting_twitter_url',
-                'value' => '',
+                'key' => 'setting_twitter_url'
             ],
             [
-                'key' => 'setting_instagram_url',
-                'value' => '',
+                'key' => 'setting_instagram_url'
+            ],
+            [
+                'key' => 'setting_donation_heading_title'
             ]
         ]);
     }

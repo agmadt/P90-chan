@@ -25,7 +25,9 @@ class PageController extends Controller
 
     public function donation()
     {
-        $data = [];
+        $data = [
+            'donations' => []
+        ];
 
         return view('frontend.donation', $data);
     }

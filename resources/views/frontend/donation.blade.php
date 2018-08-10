@@ -25,17 +25,19 @@
           <div class="row">
               <div class="col-md-12">
                   <div class="about-text-container">
-                      <p><strong>Zakat</strong> itu mensucikan, kami bantu Anda menunaikannya semakin mudah… Kini Sobat dapat menunaikan zakat dengan mentransfer via ATM terdekat, ke rekening-rekening donasi kami</p>
+                      <p>{{ $siteSetting['setting_donation_heading_title'] }}</p>
                       <div class="table-responsive pt2">
                         <table class="table">
                           <tr>
                             <td>Bank</td>
                             <td>Nomor Rekening</td>
                           </tr>
-                          <tr>
-                            <td>Logo Bank</td>
-                            <td>Nama Bank</td>
-                          </tr>
+                          @foreach ($donations as $donation)
+                            <tr>
+                              <td>{{ $donation->account_number }}</td>
+                              <td>{{ $donation->bank_name }}</td>
+                            </tr>
+                          @endforeach
                         </table>
                       </div>
                   </div>
