@@ -45,4 +45,13 @@ class PageController extends Controller
 
         return redirect()->route('contact-us')->with('success', 'Pesan anda telah kami terima, terimakasih!');
     }
+
+    public function galleries()
+    {
+        $data = [
+            'photos' => []
+        ];
+
+        return view('frontend.galleries', $data);
+    }
 }
