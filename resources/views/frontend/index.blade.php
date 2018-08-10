@@ -192,10 +192,10 @@
         <div class="single-items col-md-3 col-sm-4 col-xs-12 overlay-hover">
             <div class="overlay-effect sea-green-overlay">
                 @if ($photo->hasImage)
-                    <a href="{{ route('gallery-detail', $photo->id) }}"><img src="img/gallery/{{ $photo->image }}" alt=""></a>
+                    <img src="img/gallery/{{ $photo->mediumImage }}" alt="">
                 @endif
                 <div class="gallery-hover-effect">
-                    <a class="gallery-icon venobox" href="img/gallery/13.jpg"><i class="fa fa-search-plus"></i></a>
+                    <a class="gallery-icon venobox" href="img/gallery/{{ $photo->image }}"><i class="fa fa-search-plus"></i></a>
                     <span class="gallery-text">{{ $photo->title }}</span>
                 </div> 
             </div>

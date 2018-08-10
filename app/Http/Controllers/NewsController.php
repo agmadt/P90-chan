@@ -14,4 +14,13 @@ class NewsController extends Controller
 
         return view('frontend.news', $data);
     }
+
+    public function show($id)
+    {
+        $data = [
+        	'news' => []
+        ];
+
+        return view('frontend.news-detail', $data);
+    }
 }
