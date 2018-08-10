@@ -8,7 +8,9 @@ class NewsController extends Controller
 {
     public function index()
     {
-        $data = [];
+        $data = [
+        	'news' => []
+        ];
 
         return view('frontend.news', $data);
     }

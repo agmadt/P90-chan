@@ -24,163 +24,29 @@
   <div class="class-grid-area section-padding">
       <div class="container">
           <div class="row">
-              <div class="col-md-4 col-sm-6">
-                  <div class="single-class">
-                      <div class="single-class-image">
-                          <a href="#">
-                              <img src="img/gallery/1.jpg" alt="">
-                              <span class="class-date">Apr 21 <span>2016</span></span>
-                          </a>
-                      </div>
-                      <div class="single-class-text">
-                          <div class="class-des">
-                              <h4><a href="#">Letter Match Class</a></h4>
-                              <p>Labore sequi impedit expedita alias dolore, nulla consequuntur tempore at voluptatibus fugit quo nihil fugiat!  alias ut delectus cupiditate voluptatum.</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-4 col-sm-6">    
-                  <div class="single-class">
-                      <div class="single-class-image">
-                          <a href="#">
-                              <img src="img/gallery/5.jpg" alt="">
-                              <span class="class-date">OCT 10 <span>2016</span></span>
-                          </a>
-                      </div>
-                      <div class="single-class-text">
-                          <div class="class-des">
-                              <h4><a href="#">Cool Math Class</a></h4>
-                              <p>The students learn different skills like rhythm, flexibility, and coordination. Lorem ipsum dolor sit amet. The perfect class for your child with the best.</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-4 col-sm-6">    
-                  <div class="single-class">
-                      <div class="single-class-image">
-                          <a href="#">
-                              <img src="img/gallery/12.jpg" alt="">
-                              <span class="class-date">Nov 10 <span>2016</span></span>
-                          </a>
-                      </div>
-                      <div class="single-class-text">
-                          <div class="class-des">
-                              <h4><a href="#">Awsome Drawing Class</a></h4>
-                              <p>The students learn different skills like rhythm, flexibility, and coordination. Lorem dolor sit amet. The perfect class for your child with the best.</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-4 col-sm-6">
-                  <div class="single-class">
-                      <div class="single-class-image">
-                          <a href="#">
-                              <img src="img/gallery/7.jpg" alt="">
-                              <span class="class-date">OCT 10 <span>2016</span></span>
-                          </a>
-                      </div>
-                      <div class="single-class-text">
-                          <div class="class-des">
-                              <h4><a href="#">Cool Activity Class</a></h4>
-                              <p>Lorem ipsum dolor sit amet, abconsectetur adipisicing elit. Sunt quasi molestiae ipsa ullam perferendis student est magnam nobis vel laborum.</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-4 col-sm-6">
-                  <div class="single-class">
-                      <div class="single-class-image">
-                          <a href="#">
-                              <img src="img/gallery/2.jpg" alt="">
-                              <span class="class-date">FEB 19 <span>2016</span></span>
-                          </a>
-                      </div>
-                      <div class="single-class-text">
-                          <div class="class-des">
-                              <h4><a href="#">Alphabet Matching Class</a></h4>
-                              <p>Fuga animi vel cumque officiis provident, quam, odit libero perferendis, itaque odio rem culpa ab a maxime quas quos illo quod</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-4 col-sm-6">
-                  <div class="single-class">
-                      <div class="single-class-image">
-                          <a href="#">
-                              <img src="img/gallery/3.jpg" alt="">
-                              <span class="class-date">Mar 22 <span>2016</span></span>
-                          </a>
-                      </div>
-                      <div class="single-class-text">
-                          <div class="class-des">
-                              <h4><a href="#">Alphabet Matching Class</a></h4>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum incidunt quo voluptatem id dicta ea similique blanditiis nihi</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-4 col-sm-6">
-                  <div class="single-class">
-                      <div class="single-class-image">
-                          <a href="#">
-                              <img src="img/gallery/4.jpg" alt="">
-                              <span class="class-date">FEB 19 <span>2016</span></span>
-                          </a>
-                      </div>
-                      <div class="single-class-text">
-                          <div class="class-des">
-                              <h4><a href="#">Drawing Class</a></h4>
-                              <p>Minima ipsa possimus voluptatum is consequatur aperiam fuga beatae iusto et quod expedita, numquam sit, accusantium non expedita!</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-4 col-sm-6">
-                  <div class="single-class">
-                      <div class="single-class-image">
-                          <a href="#">
-                              <img src="img/gallery/13.jpg" alt="">
-                              <span class="class-date">May 13 <span>2016</span></span>
-                          </a>
-                      </div>
-                      <div class="single-class-text">
-                          <div class="class-des">
-                              <h4><a href="#">Science Class</a></h4>
-                              <p>Suscipit qui eum non, vel doloremque placeat, consequuntur explicabo tempore eius! Numquam amet exercit accusamus praesentium.</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-4 hidden-sm">
-                  <div class="single-class">
-                      <div class="single-class-image">
-                          <a href="#">
-                              <img src="img/gallery/6.jpg" alt="">
-                              <span class="class-date">Feb 10 <span>2016</span></span>
-                          </a>
-                      </div>
-                      <div class="single-class-text">
-                          <div class="class-des">
-                              <h4><a href="#">Science Class</a></h4>
-                              <p>Suscipit qui eum non, vel doloremque placeat, consequuntur explicabo tempore eius! Numquam amet exercit accusamus praesentium.</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+            @foreach ($news as $singleNews)
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-class">
+                        <div class="single-class-image">
+                            <a href="{{ route('news-detail', $singleNews->id) }}">
+                                <span class="class-date">{{ $singleNews->created_at->format('d M') }} <span>{{ $singleNews->created_at->format('Y') }}</span></span>
+                            </a>
+                        </div>
+                        <div class="single-class-text">
+                            <div class="class-des">
+                                <h4><a href="{{ route('news-detail', $singleNews->id) }}">{{ $singleNews->title }}</a></h4>
+                                <p>{{ $singleNews->excerpt }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
           </div>
           <div class="row">
               <div class="col-md-12">
                   <div class="pagination-content">
                       <div class="pagination-button">
-                          <ul class="pagination">
-                              <li class="current"><a href="#">1</a></li>
-                              <li><a href="#">2</a></li>
-                              <li><a href="#">3</a></li>
-                              <li><a href="#">4</a></li>
-                              <li><a href="#"><i class="fa fa-caret-right"></i></a></li>
-                          </ul>
-                          <span>Page:</span>
+                        {{-- {{ $news->links() }} --}}
                       </div>
                   </div>
               </div>
