@@ -144,6 +144,7 @@
         </div>
     </div>
   </div>
+  @if ($news)
   <div class="class-area section-padding">
     <div class="container">
         <div class="row">
@@ -157,79 +158,29 @@
         </div>
         <div class="row">
             <div class="class-carousel carousel-style-one">
-                <div class="col-md-4">
-                    <div class="single-class">
-                        <div class="single-class-image">
-                            <a href="#">
-                                <img src="img/class/10.jpg" alt="">
-                                <span class="class-date">21 Apr <span>2016</span></span>
-                            </a>
-                        </div>
-                        <div class="single-class-text">
-                            <div class="class-des">
-                                <h4><a href="#">Letter Match Class</a></h4>
-                                <p>The concept of the activity room is about 'Learning', through play, in a totally different environment. The perfect class for your child with the best.</p>
+                @foreach ($news as $singleNews)
+                    <div class="col-md-4">
+                        <div class="single-class">
+                            <div class="single-class-image">
+                                <a href="{{ route('news-detail', $singleNews->id) }}">
+                                    <span class="class-date">{{ $singleNews->created_at->format('d M') }} <span>{{ $singleNews->created_at->format('Y') }}</span></span>
+                                </a>
+                            </div>
+                            <div class="single-class-text">
+                                <div class="class-des">
+                                    <h4><a href="{{ route('news-detail', $singleNews->id) }}">{{ $singleNews->title }}</a></h4>
+                                    <p>{{ $singleNews->excerpt }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="single-class">
-                        <div class="single-class-image">
-                            <a href="#">
-                                <img src="img/class/11.jpg" alt="">
-                                <span class="class-date">10 Okt <span>2016</span></span>
-                            </a>
-                        </div>
-                        <div class="single-class-text">
-                            <div class="class-des">
-                                <h4><a href="#">Cool Math Class</a></h4>
-                                <p>The students learn different skills like rhythm, flexibility, and coordination. Lorem ipsum dolor sit amet. The perfect class for your child with the best.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="single-class">
-                        <div class="single-class-image">
-                            <a href="#">
-                                <img src="img/class/12.jpg" alt="">
-                                <span class="class-date">19 Feb <span>2016</span></span>
-                            </a>
-                        </div>
-                        <div class="single-class-text">
-                            <div class="class-des">
-                                <h4><a href="#">Alphabet Matching Class</a></h4>
-                                <p>orem ipsum dolor sit amet, consectetur adipisicing elit. Facilis fugit perferendis quam quis. Ab alias amet animir et alias amet explica.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="single-class">
-                        <div class="single-class-image">
-                            <a href="#">
-                                <img src="img/class/10.jpg" alt="">
-                                <span class="class-date">Apr 21 <span>2016</span></span>
-                            </a>
-                        </div>
-                        <div class="single-class-text">
-                            <div class="class-des">
-                                <h4><a href="#">Letter Match Class</a></h4>
-                                <p>The concept of the activity room is about 'Learning', through play, in a totally different environment. The perfect class for your child with the best.</p>
-                            </div>
-                            <div class="class-schedule">
-                                <span>AGE: 5 - 6 years</span>
-                                <span>CLASS SIZE: 25</span>
-                                <span class="arrow"><a href="#"><i class="fa fa-angle-right"></i></a></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>    
         </div>
     </div>
   </div>
+  @endif
+  @if ($photos)
   <div class="gallery-area gallery-fullwidth section-gray section-padding pb3">
     <div class="section-title-wrapper title-yellow">
         <div class="section-title">
@@ -237,48 +188,26 @@
         </div>
     </div> 
     <div class="gallery-wrapper">
+        @foreach ($photos as $photo)
         <div class="single-items col-md-3 col-sm-4 col-xs-12 overlay-hover">
             <div class="overlay-effect sea-green-overlay">
-                <a href="#"><img src="img/gallery/13.jpg" alt=""></a>
+                @if ($photo->hasImage)
+                    <a href="{{ route('gallery-detail', $photo->id) }}"><img src="img/gallery/{{ $photo->image }}" alt=""></a>
+                @endif
                 <div class="gallery-hover-effect">
                     <a class="gallery-icon venobox" href="img/gallery/13.jpg"><i class="fa fa-search-plus"></i></a>
-                    <span class="gallery-text">Drawings</span>
+                    <span class="gallery-text">{{ $photo->title }}</span>
                 </div> 
             </div>
-        </div>
-        <div class="single-items col-md-3 col-sm-4 col-xs-12 overlay-hover">
-            <div class="overlay-effect sea-green-overlay">
-                <a href="#"><img src="img/gallery/3.jpg" alt=""></a>
-                <div class="gallery-hover-effect">
-                    <a class="gallery-icon venobox" href="img/gallery/3.jpg"><i class="fa fa-search-plus"></i></a>
-                    <span class="gallery-text">Activities, Photos</span>
-                </div>
-            </div>
-        </div>
-        <div class="single-items col-md-3 col-sm-4 col-xs-12 overlay-hover">
-            <div class="overlay-effect sea-green-overlay">
-                <a href="#"><img src="img/gallery/9.jpg" alt=""></a>
-                <div class="gallery-hover-effect">
-                    <a class="gallery-icon venobox" href="img/gallery/9.jpg"><i class="fa fa-search-plus"></i></a>
-                    <span class="gallery-text">Play Time</span>
-                </div>
-            </div>
-        </div>
-        <div class="single-items col-md-3 hidden-sm col-xs-12 overlay-hover">
-            <div class="overlay-effect sea-green-overlay">
-                <a href="#"><img src="img/gallery/6.jpg" alt=""></a>
-                <div class="gallery-hover-effect">
-                    <a class="gallery-icon venobox" href="img/gallery/6.jpg"><i class="fa fa-search-plus"></i></a>
-                    <span class="gallery-text">Excursions, Play</span>
-                </div>
-            </div>
-        </div>   
+        </div> 
+        @endforeach
     </div>
     <div class="view-gallery text-center">
         <h4>Galeri Foto</h4>
         <a href="{{ route('galleries') }}" class="button-default">Lihat</a>
     </div>
   </div>
+  @endif
   <div class="google-map-area">
     <div id="contacts" class="map-area">
       <div id="googleMap" style="width:100%;height:451px;"></div>

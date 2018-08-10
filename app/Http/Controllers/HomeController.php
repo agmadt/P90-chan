@@ -8,7 +8,12 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('frontend.index');
+        $data = [
+            'news' => [],
+            'photos' => []
+        ];
+
+        return view('frontend.index', $data);
     }
 
     public function search()
