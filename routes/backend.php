@@ -18,4 +18,28 @@ Route::group(['prefix' => 'backend'], function () {
 		Route::put('news/{news}', 'NewsController@update')->name('update');
 		Route::delete('news/{news}', 'NewsController@destroy')->name('destroy');
 	});
+
+	Route::group(['prefix' => '/slider', 'as' => 'slider.'], function () {
+		Route::get('/', 'SliderController@index')->name('index');
+	});
+
+	Route::group(['prefix' => '/photo', 'as' => 'photo.'], function () {
+		Route::get('/', 'PhotoController@index')->name('index');
+	});
+
+	Route::group(['prefix' => '/staff', 'as' => 'staff.'], function () {
+		Route::get('/', 'StaffController@index')->name('index');
+	});
+
+	Route::group(['prefix' => '/bank', 'as' => 'bank.'], function () {
+		Route::get('/', 'BankController@index')->name('index');
+	});
+
+	Route::group(['prefix' => '/inquiry', 'as' => 'inquiry.'], function () {
+		Route::get('/', 'InquiryController@index')->name('index');
+	});
+
+	Route::group(['prefix' => '/setting', 'as' => 'setting.'], function () {
+		Route::get('/', 'SettingController@index')->name('homepage');
+	});
 });
