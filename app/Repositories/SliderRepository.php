@@ -102,7 +102,10 @@ class SliderRepository
 
     public function destroy($id)
     {
-        $this->findOrFail($id)->delete();
+        $slider = $this->findOrFail($id);
+        $slider->delete();
+        
+        $this->deleteImage($slider);
     }
 }
 
