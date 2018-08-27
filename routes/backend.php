@@ -21,6 +21,12 @@ Route::group(['prefix' => 'backend'], function () {
 
 	Route::group(['prefix' => '/slider', 'as' => 'slider.'], function () {
 		Route::get('/', 'SliderController@index')->name('index');
+		Route::get('/create', 'SliderController@create')->name('create');
+		Route::get('/edit/{id}', 'SliderController@edit')->name('edit');
+		Route::post('/edit/{id}', 'SliderController@update')->name('update');
+
+		Route::post('/create', 'SliderController@store')->name('store');
+		Route::post('/destroy/{id}', 'SliderController@destroy')->name('destroy');
 	});
 
 	Route::group(['prefix' => '/photo', 'as' => 'photo.'], function () {

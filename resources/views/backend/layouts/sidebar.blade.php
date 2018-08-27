@@ -43,7 +43,7 @@
         </a>
       </li>
       <li>
-        <a href="{{ route('setting.index') }}">
+        <a href="{{ route('setting.homepage') }}">
           <i class="fa fa-cogs"></i>
           <span>Pengaturan</span>
         </a>
